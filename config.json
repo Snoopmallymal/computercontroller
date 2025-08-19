@@ -2,8 +2,8 @@
   "computers": [
     {
       "name": "Harvey's PC",
-      "hostname": "harveys-heggiy.local",
-      "token": "devtoken",
+      "hostname": "10.10.1.132:8000",
+      "token": "d7ac1395b87f801d210f714e4900332526bea29670cc1661fc83ec6c82c1dcb87235017fd0160ff380249705a2ca88d98f0a5123b2f9b26213c2d2e915e4e925",
       "enviroment_token": false,
       "id": "harvpc",
       "managed_user": "harv"

@@ -1,0 +1,12 @@
+{
+  "computers": [
+    {
+      "name": "Harvey's PC",
+      "hostname": "harveys-heggiy.local",
+      "token": "devtoken",
+      "enviroment_token": false,
+      "id": "harvpc",
+      "managed_user": "harv"
+    }
+  ]
+}

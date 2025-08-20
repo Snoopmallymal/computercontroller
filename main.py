@@ -19,7 +19,7 @@ async def main():
         )
         computers[comp["id"]] = manager
         # await the async function
-        responce =await manager.apipost("unlock")
+        responce = await manager.status()
         print(f"Unlock responce from {comp['name']}: {responce}")
     print("Managers initialized:", list(computers.keys()))
 

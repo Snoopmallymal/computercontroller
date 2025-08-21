@@ -1,27 +1,18 @@
 import json
-from computer import ComputerManager
+from computer import ComputerImporter as importer
+from livedata import LiveData as live_data
+from database import Database as db
 import asyncio
 
 async def main():
-    with open("config.json","r") as f:
-        data = json.load(f)
+    computers = importer().computers
+    print("Computers managed:", computers)
+    for comp in computers:
+        print(f"Computer ID: {comp}")
+        print(f"Minutes left: {live_data(comp).get_minutes()}")
+        print(f"Lock mode: {live_data(comp).get_lock_mode()}")
+        print(f"Name: {computers[comp].name}")
 
-    computers = {}
+    
 
-    for comp in data["computers"]:
-        manager = ComputerManager(
-            comp["id"],
-            comp["name"],
-            comp["hostname"],
-            comp["token"],
-            comp["enviroment_token"],
-            comp["managed_user"]
-        )
-        computers[comp["id"]] = manager
-        # await the async function
-        responce = await manager.status()
-        print(f"Unlock responce from {comp['name']}: {responce}")
-    print("Managers initialized:", list(computers.keys()))
-
-# Run the async main function
 asyncio.run(main())
